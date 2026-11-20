@@ -1,6 +1,6 @@
 const page = () => {
   return (
-    <div className={"flex justify-center items-center h-screen"}>
+    <div className="flex min-h-screen home-wrapper">
       <button>click me</button>
     </div>
   )
