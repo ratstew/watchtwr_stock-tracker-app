@@ -13,7 +13,7 @@ const TradingViewHeatmap = ({ dataSource = "OMXS30", height = 600 }: Props) => {
                 type="module"
                 src="https://widgets.tradingview-widget.com/w/en/tv-heatmap.js"
             />
-            {/* createElement används eftersom TypeScript inte känner till taggen tv-heatmap */}
+            {/* createElement is used because TypeScript does not know the tv-heatmap tag */}
             {createElement("tv-heatmap", {
                 "heatmap-type": "stock",
                 "data-source": dataSource,

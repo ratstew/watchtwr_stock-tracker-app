@@ -32,8 +32,8 @@ const TradingViewChart = ({ symbol = "NASDAQ:AAPL", height = 600 }: Props) => {
         el.appendChild(script);
     }, [symbol]);
 
-    // Höjden ligger på den yttre diven eftersom TradingView-skriptet
-    // skriver över stilen på sin egen container.
+    // The height is set on the outer div because the TradingView script
+    // overrides the style of its own container.
     return (
         <div className="w-full" style={{ height }}>
             <div className="tradingview-widget-container h-full w-full" ref={container}>

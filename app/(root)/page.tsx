@@ -6,7 +6,7 @@ import TradingViewEconomicCalendar from "@/components/TradingViewEconomicCalenda
 
 const Page = () => {
     return (
-        <main className="min-h-screen home-wrapper">
+        <div className="home-wrapper">
             <section className="grid w-full grid-cols-1 gap-8 lg:grid-cols-2">
                 <div className="min-w-0 lg:col-span-2">
                     <TradingViewMarketSummary />
@@ -32,7 +32,7 @@ const Page = () => {
                     <TradingViewEconomicCalendar height={600} />
                 </div>
             </section>
-        </main>
+        </div>
     )
 }
 
