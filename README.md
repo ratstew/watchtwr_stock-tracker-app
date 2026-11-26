@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# watchtwr
 
-## Getting Started
+A dark-themed stock market dashboard built with Next.js, focused on the Stockholm market.
 
-First, run the development server:
+> **Status:** work in progress. This is a learning and portfolio project, not a trading platform, and nothing in it is financial advice.
+
+## Features
+
+- Demo sign-in page (no real authentication yet)
+- Market summary for the Stockholm exchange
+- Interactive price chart with symbol search
+- OMXS30 heatmap grouped by sector
+- Financial news feed
+- Economic calendar
+- Layout that stacks into one column on smaller screens
+
+Market data, news and calendar events come from embedded [TradingView widgets](https://www.tradingview.com/widget-docs/). Some data is delayed.
+
+## Roadmap
+
+- [ ] Stock search and detail pages
+- [ ] Authentication
+- [ ] Personal watchlist
+- [ ] Scheduled news emails with Inngest
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org/) (App Router)
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/) components
+
+## Getting started
+
+You need [Node.js](https://nodejs.org/) 20.9 or later.
 
 ```bash
+git clone https://github.com/ratstew/watchtwr_stock-tracker-app.git
+cd watchtwr_stock-tracker-app
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). No API keys are required for the current features.
 
-You can start editing the page by modifying `app/(root)/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/           Pages, layouts and global styles
+components/    Header, navigation and TradingView widgets
+components/ui/ shadcn/ui components
+lib/           Constants and helpers
+public/        Static assets
+```
 
-## Learn More
+## Credits
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The project started from a YouTube tutorial on building a stock tracker with Next.js and Inngest, and is being adapted from there.

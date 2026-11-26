@@ -10,18 +10,18 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { LogOut } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { endDemoSession } from "@/lib/demo-session";
 
 const UserDropdown = () => {
-    const router = useRouter();
+    const handleSignOut = () => {
+        endDemoSession();
+        window.location.assign("/sign-in");
+    };
 
-    const handleSignOut = async () => {
-        router.push("/sign-in")
-    }
-
-    const user = { name: 'John', email: 'contact@rat.com' }
+    // Placeholder user until authentication is implemented
+    const user = { name: 'Demo User', email: 'demo@example.com' }
 
     return (
         <DropdownMenu>
@@ -34,7 +34,6 @@ const UserDropdown = () => {
                 }
             >
                 <Avatar className="h-8 w-8">
-                    <AvatarImage src="https://github.com/shadcn.png" />
                     <AvatarFallback className="bg-yellow-500 text-yellow-900 text-sm font-bold">
                         {user.name[0]}
                     </AvatarFallback>

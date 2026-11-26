@@ -3,13 +3,17 @@ import Header from "@/components/Header";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <main className="min-h-screen text-gray-400">
+        <div className="flex min-h-screen flex-col text-gray-400">
             <Header />
 
-            <div className="container py-10">
+            <main className="container flex-1 py-10">
                 {children}
-            </div>
-        </main>
+            </main>
+
+            <footer className="container py-6 text-center text-sm text-gray-500">
+                Portfolio project. Not financial advice. Market data by TradingView.
+            </footer>
+        </div>
     )
 }
 
